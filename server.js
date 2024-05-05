@@ -4,7 +4,7 @@ const cors = require("cors")
 const stripe = require("stripe")("sk_test_51P2F0WSDWHs1tezgSOAsm0rhpaMp3uYdVYo6j5070UBE9j3j4e1eFqNUKS69SKjoK1aqVjHbIytK9cbdEV998vM600n0UN2YaN")
 require('dotenv').config()
 const port =8000
-const CLIENT_URL ="https://bakehut.netlify.app"
+const CLIENT_URL ="https://bakehut.vercel.app"
 const URI ="mongodb+srv://shubhammeena1376:9532911687@cluster0.p4q8nwb.mongodb.net/BakehutClient"
 const crypto = require("crypto") //phonepe
 const axios = require("axios") 
@@ -78,7 +78,7 @@ app.post("/forgotPassword",async(req,res)=>{
     from: 'shubham.meena1376@gmail.com',
     to: MatchData.email,
     subject: 'Reset Your Password',
-    text: `https://bakehut.netlify.app/reset-password/${MatchData._id}/${token}`
+    text: `https://bakehut.vercel.app/reset-password/${MatchData._id}/${token}`
   };
   
   transporter.sendMail(mailOptions, function(error, info){
